@@ -1,0 +1,212 @@
+/* Brasil Informática — estilos */
+:root{
+  --ink:#0B1F33;
+  --ink-2:#12304F;
+  --ink-3:#071524;
+  --accent:#3DDC97;
+  --accent-hover:#6BE8B3;
+  --bg:#F4F6F8;
+  --line:#D5DCE4;
+  --muted:#44566A;
+  --green-text:#1D6B4F;
+  --on-dark:#C9D4E0;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;margin:0}
+p{margin:0}
+a{color:inherit}
+img,svg{max-width:100%}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:var(--ink);padding:10px 16px;z-index:20;border-radius:6px}
+.skip:focus{left:8px}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.icon{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* Botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;font:600 16px 'IBM Plex Sans',system-ui,sans-serif;text-decoration:none;border:0;border-radius:6px;cursor:pointer}
+.btn-accent{background:var(--accent);color:var(--ink)}
+.btn-accent:hover{background:var(--accent-hover)}
+.btn-outline{border:1.5px solid #fff;color:#fff;background:transparent}
+.btn-outline:hover{background:rgba(255,255,255,.12)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#17375A}
+
+/* Topo */
+.header{position:sticky;top:0;z-index:10;background:var(--ink);color:#fff}
+.header-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 32px;padding-top:10px;padding-bottom:10px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-height:48px;font:700 20px 'Space Grotesk',system-ui,sans-serif}
+.brand .icon{color:var(--accent)}
+.nav{display:flex;align-items:center;gap:8px 28px}
+.nav a{text-decoration:none;font-weight:600;padding:12px 4px}
+.nav a:not(.btn):hover{color:var(--accent)}
+.nav .btn{padding:0 20px}
+.menu-toggle{display:none;align-items:center;gap:10px;min-height:48px;padding:0 14px;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);border-radius:6px;font:600 16px 'IBM Plex Sans',system-ui,sans-serif;cursor:pointer}
+.menu-toggle .bars{width:18px;height:2px;background:currentColor;position:relative;display:block}
+.menu-toggle .bars::before,.menu-toggle .bars::after{content:"";position:absolute;left:0;width:18px;height:2px;background:currentColor;transition:transform .2s}
+.menu-toggle .bars::before{top:-6px}
+.menu-toggle .bars::after{top:6px}
+.menu-toggle[aria-expanded="true"] .bars{background:transparent}
+.menu-toggle[aria-expanded="true"] .bars::before{transform:translateY(6px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] .bars::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* Seções */
+.section{padding:88px 0}
+.section-white{background:#fff;border-top:1px solid var(--line)}
+.section-white.bordered{border-bottom:1px solid var(--line)}
+.section-dark{background:var(--ink);color:#fff}
+.eyebrow{font-size:15px;font-weight:600;color:var(--green-text);margin-bottom:10px}
+.section-dark .eyebrow,.hero .eyebrow{color:var(--accent)}
+.title{font-size:clamp(28px,3.4vw,40px);line-height:1.15;max-width:680px}
+.muted{color:var(--muted);line-height:1.6}
+.grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:40px}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:28px}
+.card h3{font-size:22px;margin:16px 0 10px}
+
+/* Abertura / Hero */
+.hero{background:var(--ink);color:#fff;padding:72px 0 88px}
+.hero-grid{
+  display:grid;
+  gap:64px;
+  grid-template-columns:minmax(0, .82fr) minmax(500px, 1fr);
+  align-items:center;
+}
+.hero-content{max-width:620px}
+.hero h1{
+  max-width:620px;
+  font-size:clamp(42px,5vw,58px);
+  line-height:1.08;
+  letter-spacing:-1.5px;
+}
+.hero .lead{
+  font-size:18px;
+  line-height:1.6;
+  color:var(--on-dark);
+  margin:22px 0 34px;
+  max-width:620px;
+}
+.actions{display:flex;flex-wrap:wrap;gap:16px}
+
+/* Painel dos diferenciais */
+.panel{
+  background:var(--ink-2);
+  border-radius:12px;
+  padding:36px 38px;
+}
+.panel h2{font-size:28px;line-height:1.2;margin-bottom:30px}
+
+.differentials{
+  display:grid;
+  gap:28px;
+}
+
+.differential{
+  display:grid;
+  grid-template-columns:56px 1fr;
+  gap:20px;
+  align-items:start;
+}
+
+.differential-icon{
+  width:48px;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--accent);
+}
+
+.icon-differential{
+  width:42px;
+  height:42px;
+  stroke-width:1.9;
+}
+
+.differential h3{
+  font-size:19px;
+  line-height:1.35;
+  margin:0 0 7px;
+}
+
+.differential p{
+  color:var(--on-dark);
+  font-size:16px;
+  line-height:1.5;
+  max-width:560px;
+}
+
+/* Etapas */
+.step-num{font:700 56px/1 'Space Grotesk',system-ui,sans-serif;color:var(--green-text)}
+.step h3{font-size:22px;margin:12px 0 8px}
+
+/* Produtos */
+.product{display:flex;flex-direction:column;gap:14px}
+.product .tag{font-size:14px;font-weight:600;color:var(--green-text)}
+.product h3{font-size:22px;margin:0}
+.ph{border:1.5px dashed #8696A8;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;text-align:center;padding:12px}
+.ph-photo{height:180px}
+.ph-logo{height:90px}
+.logos{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.quote{background:var(--bg)}
+.quote p:first-child{font-size:18px;line-height:1.55;margin-bottom:16px}
+
+/* Contato */
+.contact-grid{display:grid;gap:56px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.contact-list{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:16px;font-size:17px;color:var(--on-dark)}
+.contact-list strong{color:#fff}
+.form{background:#fff;color:var(--ink);border-radius:12px;padding:32px;display:grid;gap:18px}
+.form label{font-weight:600;font-size:15px}
+.field{display:block;width:100%;min-height:48px;margin-top:6px;padding:10px 14px;border:1.5px solid #8696A8;border-radius:6px;font:400 16px 'IBM Plex Sans',system-ui,sans-serif;color:var(--ink);background:#fff}
+textarea.field{resize:vertical;min-height:110px}
+.field:invalid:not(:placeholder-shown){border-color:#B3261E}
+.form-note{font-size:14px}
+.form-status{min-height:1.5em;font-size:15px;font-weight:600;color:var(--green-text)}
+.form-status.erro{color:#B3261E}
+
+/* Rodapé */
+.footer{background:var(--ink-3);color:var(--on-dark);padding:40px 0;font-size:15px;line-height:1.6}
+.footer-inner{display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between;align-items:center}
+.footer strong{color:#fff}
+.footer-links{display:flex;flex-wrap:wrap;gap:4px 24px}
+.footer-links a{padding:10px 0}
+
+/* Botão fixo de WhatsApp */
+.fab{position:fixed;right:16px;bottom:16px;z-index:9;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 20px;background:var(--accent);color:var(--ink);font-weight:600;text-decoration:none;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.fab:hover{background:var(--accent-hover)}
+.fab .icon{width:24px;height:24px}
+
+/* Celular */
+@media (max-width:860px){
+  .menu-toggle{display:inline-flex}
+  .nav{display:none;flex-basis:100%;flex-direction:column;align-items:stretch;gap:0;padding:8px 0 12px}
+  .nav.is-open{display:flex}
+  .nav a{padding:14px 4px;border-top:1px solid rgba(255,255,255,.14)}
+  .nav .btn{margin-top:12px;border-top:0}
+  .section{padding:56px 0}
+  .hero{padding:48px 0 56px}
+  .hero-grid,.contact-grid{gap:32px}
+  .hero-grid{grid-template-columns:1fr}
+  .panel,.form{padding:24px}
+  .fab span{display:none}
+  .fab{padding:0;width:52px;justify-content:center}
+}
+
+@media (max-width:600px){
+  .hero h1{font-size:44px;letter-spacing:-1px}
+  .differential{
+    grid-template-columns:44px 1fr;
+    gap:14px;
+  }
+  .differential-icon{width:40px;height:40px}
+  .icon-differential{width:36px;height:36px}
+  .panel h2{font-size:24px}
+  .differential h3{font-size:17px}
+  .differential p{font-size:15px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .menu-toggle .bars::before,.menu-toggle .bars::after{transition:none}
+}
